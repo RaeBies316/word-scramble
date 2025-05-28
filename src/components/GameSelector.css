@@ -1,0 +1,39 @@
+.game-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.game-option {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  color: #1f2937;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.game-option:hover {
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+}
+
+.game-option.active {
+  background: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  color: white;
+  box-shadow: 
+    0 4px 6px -1px rgba(79, 70, 229, 0.2),
+    0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+@media (max-width: 600px) {
+  .game-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+} 

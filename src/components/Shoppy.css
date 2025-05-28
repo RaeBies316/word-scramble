@@ -1,0 +1,102 @@
+.assistant-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1000;
+}
+
+.floating-shape {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  transform-origin: center;
+}
+
+.floating-shape svg {
+  width: 100%;
+  height: 100%;
+}
+
+.default-shape {
+  fill: #6366f1;
+}
+
+.default-shape circle {
+  fill: #818cf8;
+}
+
+.hint-shape {
+  fill: #5c6ac4;
+}
+
+.complete-shape {
+  fill: #95bf47;
+}
+
+.message-bubble {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  max-width: 250px;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.message-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 24px;
+  width: 16px;
+  height: 16px;
+  background: inherit;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transform: rotate(45deg);
+  backdrop-filter: blur(10px);
+  box-shadow: 4px 4px 5px -2px rgba(0, 0, 0, 0.1);
+}
+
+.message-bubble.correct {
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  color: white;
+}
+
+.message-bubble.hint {
+  background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+  color: white;
+}
+
+.message-bubble.complete {
+  background: linear-gradient(135deg, #95bf47 0%, #008060 100%);
+  color: white;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+} 
