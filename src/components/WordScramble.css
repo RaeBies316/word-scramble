@@ -129,4 +129,188 @@
   margin-top: 1rem;
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.game-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.game-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.game-info > div {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.scrambled-word {
+  font-size: 2.5em;
+  margin: 30px 0;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.letter {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-section {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.answer-input {
+  padding: 12px 20px;
+  font-size: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  width: 200px;
+}
+
+.answer-input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.check-button, .hint-button, .play-again-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.check-button {
+  background: #0066cc;
+  color: white;
+}
+
+.check-button:hover {
+  background: #0052a3;
+}
+
+.hint-button {
+  background: #666;
+  color: white;
+  margin: 10px 0;
+}
+
+.hint-button:hover:not(:disabled) {
+  background: #555;
+}
+
+.hint-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.play-again-button {
+  background: #28a745;
+  color: white;
+  margin-top: 20px;
+}
+
+.play-again-button:hover {
+  background: #218838;
+}
+
+.hint {
+  color: #666;
+  font-style: italic;
+  margin: 15px 0;
+}
+
+.feedback {
+  margin-top: 20px;
+  font-size: 18px;
+  min-height: 27px;
+}
+
+.feedback.correct {
+  color: #28a745;
+}
+
+.game-complete {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.streak {
+  color: #ff9900;
+  font-weight: bold;
+}
+
+.timer {
+  color: #ff3366;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.streak:not(:empty) {
+  animation: pulse 1s infinite;
+}
+
+.game-modes {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.daily-challenge-button {
+  background: #ff9900;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.daily-challenge-button:hover {
+  background: #ff8800;
+  transform: translateY(-1px);
+}
+
+.daily-challenge-button:active {
+  transform: translateY(0);
 } 
